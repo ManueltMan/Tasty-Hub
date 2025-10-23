@@ -841,6 +841,7 @@ section {
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+  padding: 40px 80px;
   margin-bottom: 60px;
 }
 
@@ -876,6 +877,30 @@ section {
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+
+
+/* Mobile view fix */
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px; /* ← adds nice spacing on both sides for mobile */
+  }
+
+  .about-hero img {
+    width: 90%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  .about-hero .about-text {
+    width: 100%;
+  }
+
+
+}
+
 
 /* Contact + Branch Section */
 .about-contact {
@@ -931,8 +956,8 @@ section {
 }
 
 .comment-form textarea {
-  width: 100%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 500px;
   padding: 15px;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -942,6 +967,8 @@ section {
 
 .comment-form button {
   background: #e67e22;
+  width: 90%;
+  max-width: 500px;
   border: none;
   color: #fff;
   padding: 10px 25px;
@@ -1192,6 +1219,8 @@ footer {
 
 body, html, #root {
   height: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .home-before,
@@ -1202,3 +1231,40 @@ body, html, #root {
   flex-direction: column;
   justify-content: space-between;
 }
+
+
+/* Center Categories Page on Mobile */
+@media (max-width: 768px) {
+  .categories-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .category-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .category-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+
+
+
+.container, .page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
